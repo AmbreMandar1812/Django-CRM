@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% extends "base.html" %} {%load crispy_forms_tags %}  {% block content %}
+   <a href="{% url 'agents:agent-list'%}">Go back to the Agents page</a>
+    <hr>
+    <h1>Are you sure you want delete this Agent?</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <button type="submit" class="bg-blue-600 w-full mt-4 border-solid rounded-md text-white">Submit</button>
+    </form>
+   {% endblock content %}
+</html>
